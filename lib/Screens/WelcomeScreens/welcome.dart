@@ -22,8 +22,11 @@ class _WelcomePageState extends State<WelcomePage> {
               height: 180,
               child: Text(
                 title,
-                style: const TextStyle(fontFamily: 'Outfit', fontSize: 160, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 160, fontWeight: FontWeight.bold, fontFamily: 'Lora', color: Primary_color),
               ),
+            ),
+            const SizedBox(
+              height: 20,
             ),
             Text(
               heading,
@@ -38,9 +41,9 @@ class _WelcomePageState extends State<WelcomePage> {
                 style: const TextStyle(fontSize: 16),
               ),
             ),
-            button(btntxt1),
+            button(btntxt1, Primary_color, Primary_color, colorwhite, () {}),
             const Text("Or"),
-            button(btntxt2),
+            button(btntxt2, colorwhite, colorblack, colorblack, () {}),
           ],
         ),
       ),
