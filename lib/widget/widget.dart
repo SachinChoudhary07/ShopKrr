@@ -20,3 +20,26 @@ Widget button(txt, color, borderColor , txtcolor, ontap) {
     ),
   );
 }
+
+
+Widget emailTextField() {
+  return Container(
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+    height: 50,
+    child: TextFormField(
+      enableSuggestions: true,
+      decoration: const InputDecoration(fillColor: Colors.red, border: OutlineInputBorder(), labelText: "Enter Email"),
+    ),
+  );
+}
+
+Widget passwordTextField() {
+  return Container(
+    height: 50,
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+    child: TextFormField(
+      enableSuggestions: true,
+      decoration: const InputDecoration(border: OutlineInputBorder(), labelText: "Enter Password"),
+    ),
+  );
+}

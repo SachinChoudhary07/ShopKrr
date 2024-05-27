@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shopkrr/Screens/AuthScreens/Login/loginPage.dart';
+import 'package:shopkrr/Screens/AuthScreens/SignUp/signupPage.dart';
 import 'package:shopkrr/constant/const.dart';
 import 'package:shopkrr/widget/widget.dart';
 
@@ -41,9 +43,21 @@ class _WelcomePageState extends State<WelcomePage> {
                 style: const TextStyle(fontSize: 16),
               ),
             ),
-            button(btntxt1, Primary_color, Primary_color, colorwhite, () {}),
+            button(btntxt1, Primary_color, Primary_color, colorwhite, () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LoginPage(),
+                  ));
+            }),
             const Text("Or"),
-            button(btntxt2, colorwhite, colorblack, colorblack, () {}),
+            button(btntxt2, colorwhite, colorblack, colorblack, () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SignupPage(),
+                  ));
+            }),
           ],
         ),
       ),
