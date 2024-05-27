@@ -28,7 +28,7 @@ Widget emailTextField() {
     height: 50,
     child: TextFormField(
       enableSuggestions: true,
-      decoration: const InputDecoration(fillColor: Colors.red, border: OutlineInputBorder(), labelText: "Enter Email"),
+      decoration: const InputDecoration(fillColor: Colors.red, border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(40))), labelText: "Enter Phone Number"),
     ),
   );
 }
@@ -39,7 +39,7 @@ Widget passwordTextField() {
     decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
     child: TextFormField(
       enableSuggestions: true,
-      decoration: const InputDecoration(border: OutlineInputBorder(), labelText: "Enter Password"),
+      decoration: const InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(40))), labelText: "Enter Password"),
     ),
   );
 }
