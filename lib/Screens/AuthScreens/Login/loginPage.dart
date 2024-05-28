@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:shopkrr/Screens/bottomBar/bottombar.dart';
 import 'package:shopkrr/constant/const.dart';
 import 'package:shopkrr/widget/widget.dart';
 
@@ -16,8 +17,6 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
 
 double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.height / 1;
-
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.fromLTRB(20, 100, 20, 20),
@@ -62,7 +61,7 @@ double height = MediaQuery.of(context).size.height;
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const LoginPage(),
+                      builder: (context) => const BottomBarPage(),
                     ));
               }),
             ],
