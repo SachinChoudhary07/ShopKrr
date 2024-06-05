@@ -11,6 +11,7 @@ class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.amber,
       appBar: AppBar(),
       body: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
