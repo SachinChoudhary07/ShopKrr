@@ -10,8 +10,8 @@ String Logo_transparent = 'assets/images/ShopKrrr_back.png';
 
 // Color Here ----------->
 Color Primary_color = const Color(0xff053262);
-Color colorblack = Color.fromARGB(255, 0, 0, 0);
-Color colorwhite = Color.fromARGB(255, 255, 255, 255);
+Color colorblack = const Color.fromARGB(255, 0, 0, 0);
+Color colorwhite = const Color.fromARGB(255, 255, 255, 255);
 
 
 
@@ -33,3 +33,11 @@ String btntxt2 = 'Sign up';
 // Sign-In Screen Text ------->
 String signinText = "Sign In";
 String forgotText = "Forgot Password";
+
+
+// ProfilePage TextHere
+
+String profile = 'Profile';
+String address = 'Address';
+String wishList = 'WishList';
+String logout = 'Logout';
