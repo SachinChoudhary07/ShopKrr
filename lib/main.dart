@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopkrr/Screens/bottomBar/bottomProvider.dart';
 import 'package:shopkrr/Screens/splashScreen/splashScreen.dart';
+import 'package:shopkrr/provider/categoryProvider/categoryProvider.dart';
 
 void main() {
   runApp(
@@ -9,6 +10,9 @@ void main() {
       providers: [
         ChangeNotifierProvider(
           create: (context) => BottomNavbarModelPage(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => CategoriesProvider(),
         ),
       ],
       child: const MyApp(),

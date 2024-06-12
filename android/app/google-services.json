@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "795756012122",
+    "project_id": "shopkr-f7cce",
+    "storage_bucket": "shopkr-f7cce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795756012122:android:2dd68246ea7e1ee542ae63",
+        "android_client_info": {
+          "package_name": "com.example.shopkr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPVr8DB-CHBucxJKbe9Xb-MwaqfUph_CY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795756012122:android:5c70fa170e912dab42ae63",
+        "android_client_info": {
+          "package_name": "com.example.shopkrr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPVr8DB-CHBucxJKbe9Xb-MwaqfUph_CY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
