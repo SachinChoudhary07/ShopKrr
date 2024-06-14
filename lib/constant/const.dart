@@ -41,3 +41,9 @@ String profile = 'Profile';
 String address = 'Address';
 String wishList = 'WishList';
 String logout = 'Logout';
+
+
+
+// Cart Page Text
+
+String cartbtn = 'Checkout';

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 Widget button(txt, color, borderColor , txtcolor, ontap) {
   return InkWell(
     onTap: ontap,
+    splashColor: Colors.transparent,
     child: Container(
       height: 44,
       width: double.infinity,
