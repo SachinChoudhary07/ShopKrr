@@ -14,13 +14,6 @@ Color colorblack = const Color.fromARGB(255, 0, 0, 0);
 Color colorwhite = const Color.fromARGB(255, 255, 255, 255);
 
 
-
-
-
-
-
-
-
 // TextHere ----------->
 //  welcomeScreen Text ------->
 String title = 'S';
@@ -33,6 +26,10 @@ String btntxt2 = 'Sign up';
 // Sign-In Screen Text ------->
 String signinText = "Sign In";
 String forgotText = "Forgot Password";
+
+
+// Sign-UP Screen Text ------->
+String signupText = "Sign Up";
 
 
 // ProfilePage TextHere

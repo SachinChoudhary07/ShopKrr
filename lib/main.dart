@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shopkrr/Screens/bottomBar/bottomProvider.dart';
+import 'package:provider/single_child_widget.dart';
 import 'package:shopkrr/Screens/splashScreen/splashScreen.dart';
-import 'package:shopkrr/provider/categoryProvider/categoryProvider.dart';
+import 'package:shopkrr/theme/dark_theme.dart';
+import 'package:shopkrr/theme/light_theme.dart';
 
 void main() {
   runApp(
     MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (context) => BottomNavbarModelPage(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => CategoriesProvider(),
-        ),
-      ],
+      providers: providers(),
       child: const MyApp(),
     ),
   );
@@ -25,13 +19,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "ShopKrr",
       debugShowCheckedModeBanner: false,
-      title: 'ShopKrrr',
-      theme: ThemeData(
-        fontFamily: 'Outfit',
-        useMaterial3: true,
-      ),
+      // theme: Provider.of<ThemeProvider>(context).darkTheme ? dark : light,
+      // theme: dark,
+      theme: light,
+      darkTheme: dark,
       home: const SplashScreen(),
     );
   }
+}
+
+List<SingleChildWidget> providers() {
+  return [
+    // ChangeNotifierProvider(create: (context) => SplashProvider()),
+    // ChangeNotifierProvider(create: (context) => ThemeProvider()),
+    // ChangeNotifierProvider(create: (context) => WelcomeProvider()),
+    // ChangeNotifierProvider(create: (context) => SignInProvider()),
+    // ChangeNotifierProvider(create: (context) => SignUpProvider()),
+    // ChangeNotifierProvider(create: (context) => ForgotPasswordProvider()),
+    // ChangeNotifierProvider(create: (context) => HealthAssessmentProvider()),
+  ];
 }
