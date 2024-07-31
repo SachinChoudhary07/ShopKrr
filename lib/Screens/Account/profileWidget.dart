@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopkrr/constant/const.dart';
+import 'package:shopkrr/constant/app_constant.dart';
 
 Widget listTileWidget(icon, title, ontap) {
   return ListTile(

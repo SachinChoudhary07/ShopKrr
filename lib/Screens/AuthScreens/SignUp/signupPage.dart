@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:shopkrr/Screens/bottomBar/bottombar.dart';
-import 'package:shopkrr/constant/const.dart';
+import 'package:shopkrr/constant/app_constant.dart';
+import 'package:shopkrr/constant/color_resources.dart';
 import 'package:shopkrr/widget/widget.dart';
 
 class SignupPage extends StatefulWidget {
@@ -26,12 +27,12 @@ class _SignupPageState extends State<SignupPage> {
             children: [
               Center(
                 child: Image.asset(
-                  Logo_transparent,
+                 AppConstants.logoTransparent,
                   height: height / 3.5,
                 ),
               ),
               Text(
-                signupText,
+                AppConstants.signupText,
                 style: const TextStyle(fontFamily: 'Lora', fontSize: 26, fontWeight: FontWeight.bold),
               ),
               SizedBox(
@@ -48,15 +49,15 @@ class _SignupPageState extends State<SignupPage> {
               Align(
                 alignment: Alignment.centerRight,
                 child: Text(
-                  forgotText,
+                  AppConstants.forgotText,
                   textAlign: TextAlign.end,
-                  style: TextStyle(color: Primary_color),
+                  style: TextStyle(color: ColorResources.Primary_color),
                 ),
               ),
               SizedBox(
                 height: height / 8,
               ),
-              button(btntxt2, Primary_color, Primary_color, colorwhite, () {
+              button(AppConstants.btntxt2, ColorResources.Primary_color, ColorResources.Primary_color, ColorResources.Primary_color, () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(

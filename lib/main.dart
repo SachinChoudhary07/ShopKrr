@@ -33,11 +33,5 @@ class MyApp extends StatelessWidget {
 List<SingleChildWidget> providers() {
   return [
     // ChangeNotifierProvider(create: (context) => SplashProvider()),
-    // ChangeNotifierProvider(create: (context) => ThemeProvider()),
-    // ChangeNotifierProvider(create: (context) => WelcomeProvider()),
-    // ChangeNotifierProvider(create: (context) => SignInProvider()),
-    // ChangeNotifierProvider(create: (context) => SignUpProvider()),
-    // ChangeNotifierProvider(create: (context) => ForgotPasswordProvider()),
-    // ChangeNotifierProvider(create: (context) => HealthAssessmentProvider()),
   ];
 }

@@ -17,12 +17,8 @@ class Dimensions {
   static const double paddingSizeExtraLarge = 25.0;
   static const double paddingSizeExtraOverLarge = 30.0;
 
-  // Other Constants
-  static const int messageInputLength = 250;
-  static const double notificationImageSize = 70.0;
-  static const double webScreenWidth = 1170.0;
 
-  // Radii
+  // Radius
   static const double radiusSmall = 5.0;
   static const double radiusDefault = 10.0;
   static const double radiusLarge = 15.0;

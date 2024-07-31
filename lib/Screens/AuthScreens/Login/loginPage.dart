@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:shopkrr/Screens/bottomBar/bottombar.dart';
-import 'package:shopkrr/constant/const.dart';
+import 'package:shopkrr/constant/app_constant.dart';
+import 'package:shopkrr/constant/color_resources.dart';
 import 'package:shopkrr/widget/widget.dart';
 
 class LoginPage extends StatefulWidget {
@@ -27,13 +28,13 @@ double height = MediaQuery.of(context).size.height;
             children: [
               Center(
                 child: Image.asset(
-                  Logo_transparent,
+                  AppConstants.logoTransparent,
                   height: height / 3.5,
                 ),
               ),
-              Text(
-                signinText,
-                style: const TextStyle(fontFamily: 'Lora', fontSize: 26, fontWeight: FontWeight.bold),
+              const Text(
+                AppConstants.signinText,
+                style: TextStyle(fontFamily: 'Lora', fontSize: 26, fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: height / 26,
@@ -46,18 +47,18 @@ double height = MediaQuery.of(context).size.height;
               const SizedBox(
                 height: 4,
               ),
-              Align(
+              const Align(
                 alignment: Alignment.centerRight,
                 child: Text(
-                  forgotText,
+                  AppConstants.forgotText,
                   textAlign: TextAlign.end,
-                  style: TextStyle(color: Primary_color),
+                  style: TextStyle(color: ColorResources.Primary_color),
                 ),
               ),
               SizedBox(
                 height: height / 8,
               ),
-              button(btntxt1, Primary_color, Primary_color, colorwhite, () {
+              button(AppConstants.btntxt1, ColorResources.Primary_color, ColorResources.Primary_color, ColorResources.Primary_color, () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(

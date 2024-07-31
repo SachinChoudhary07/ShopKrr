@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:shopkrr/Screens/Account/profileWidget.dart';
-import 'package:shopkrr/constant/const.dart';
+import 'package:shopkrr/constant/app_constant.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -37,10 +37,10 @@ class _ProfilePageState extends State<ProfilePage> {
             ],
           ),
           SizedBox(height: MediaQuery.of(context).size.height / 20),
-          listTileWidget(Icons.person, profile, () {}),
-          listTileWidget(Icons.location_city_sharp, address, () {}),
-          listTileWidget(Icons.favorite_outline_sharp, wishList, () {}),
-          listTileWidget(Icons.logout, logout, () {}),
+          listTileWidget(Icons.person, AppConstants.profile, () {}),
+          listTileWidget(Icons.location_city_sharp, AppConstants.address, () {}),
+          listTileWidget(Icons.favorite_outline_sharp, AppConstants.wishList, () {}),
+          listTileWidget(Icons.logout, AppConstants.logout, () {}),
         ],
       ),
     );

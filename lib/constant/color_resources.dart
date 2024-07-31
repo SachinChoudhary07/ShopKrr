@@ -1,45 +1,38 @@
 import 'package:flutter/material.dart';
 
-import 'package:provider/provider.dart';
-
 class ColorResources {
+
+
+
+  // shopKrr k color
+  static const  Color Primary_color = const Color(0xff053262);
+  static const Color colorblack = const Color.fromARGB(255, 0, 0, 0);
+  static const Color colorwhite = const Color.fromARGB(255, 255, 255, 255);
+
+  // Orange (Primary Color)
+  static const Color gray100 = Color(0xFF632207);
+  static const Color gray80 = Color(0xFFDF5A22);
+  static const Color grayShadow = Color(0xFFF16023);
+  static const Color gray60 = Color(0xFFEE672F);
+  static const Color gray30 = Color(0xFFF5804F);
+  static const Color gray40 = Color(0xFFE3C6A4);
   static const Color whiteColor = Color(0xFFFFFFFF);
 
-  // GREEN
-  static const Color green90 = Color(0xFF365314);
-  static const Color green40 = Color(0xFF84CC16);
-  static const Color green50 = Color(0xFFA3E635);
-  static const Color green20 = Color(0xFFD9F99D);
-  static const Color green10 = Color(0xFFECFCCB);
 
-  // GRAY
-  static const Color gray100 = Color(0xFF111A14);
-  static const Color gray80 = Color(0xFF313A34);
-  static const Color grayShadow = Color(0xFF2F3C33);
-  static const Color gray60 = Color(0xFF647067);
-  static const Color gray30 = Color(0xFFC5C8C6);
-  static const Color gray40 = Color(0xFFA2A9A4);
-  static const Color gray20 = Color(0xFFE3E4E3);
-  static const Color gray10 = Color(0xFFF5F5F5);
 
-  // Red
+  // Secondry Color
+  static const Color red100 = Color(0xFFD93F21);
+  static const Color red50 = Color(0xFFDF3232);
+  static const Color red10 = Color(0xFFFF4B26);
+  static const Color red102 = Color(0xFFE3AFB1);
 
-  static const Color red100 = Color(0xFFF4C050B);
-  static const Color red50 = Color(0xFFF43F5E);
-  static const Color red10 = Color(0xFFFFE4E7);
 
-  // Blue
-  static const Color blue90 = Color(0xFF1E3A8A);
-  static const Color blue50 = Color(0xFFF60A5FA);
-  static const Color blue10 = Color(0xFFFEFF6FF);
+  // neutral color
+  static const Color blue90 = Color(0xFF131313);
+  static const Color blue50 = Color(0xFF2D2D2D);
+  static const Color blue10 = Color(0xFF404040);
+  static const Color blue20 = Color(0xFF949494);
+  static const Color blue30 = Color(0xFFD9d9d9);
+  static const Color blue40 = Color(0xFFe9e9eb);
 
-  // Violet
-  static const Color violet90 = Color(0xFFF491D95);
-  static const Color violet50 = Color(0xFFF8B5CF6);
-  static const Color violet10 = Color(0xFFFEDE9FE);
-
-  // Yellow
-  static const Color yellow90 = Color(0xFFF713F12);
-  static const Color yellow40 = Color(0xFFFACC15);
-  static const Color yellow10 = Color(0xFFFEF9C3);
 }
