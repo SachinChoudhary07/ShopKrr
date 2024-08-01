@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shopkrr/Screens/WelcomeScreens/welcome.dart';
 import 'package:shopkrr/constant/app_constant.dart';
+import 'package:shopkrr/services/navigation.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
    @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const WelcomePage())));
+    // Timer(const Duration(seconds: 3), () => push(context, WelComeScreen()) );
   } 
   @override
   Widget build(BuildContext context) {

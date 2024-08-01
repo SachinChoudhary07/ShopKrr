@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:shopkrr/Screens/splashScreen/splashScreen.dart';
+import 'package:shopkrr/provider/categoryProvider/categoryProvider.dart';
 import 'package:shopkrr/theme/dark_theme.dart';
 import 'package:shopkrr/theme/light_theme.dart';
 
@@ -32,6 +33,6 @@ class MyApp extends StatelessWidget {
 
 List<SingleChildWidget> providers() {
   return [
-    // ChangeNotifierProvider(create: (context) => SplashProvider()),
+    ChangeNotifierProvider(create: (context) => CategoriesProvider()),
   ];
 }
