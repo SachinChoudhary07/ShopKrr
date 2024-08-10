@@ -4,7 +4,7 @@ import 'package:shopkrr/constant/dimension.dart';
 
 ThemeData light = ThemeData(
   primaryColor: ColorResources.Primary_color,
-  // secondaryHeaderColor: const Color(0xff2CD5C4),
+  secondaryHeaderColor: const Color(0xff2CD5C4),
   brightness: Brightness.light,
   cardColor: ColorResources.Primary_color,
   hintColor: ColorResources.gray60,

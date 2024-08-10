@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
-import 'package:shopkrr/Screens/splashScreen/splashScreen.dart';
 import 'package:shopkrr/provider/categoryProvider/categoryProvider.dart';
 import 'package:shopkrr/theme/dark_theme.dart';
 import 'package:shopkrr/theme/light_theme.dart';
+
+import 'Screens/AuthScreens/Login/loginPage.dart';
+import 'Screens/Dashboard/Dashboard.dart';
+import 'Screens/bottomBar/bottomProvider.dart';
+import 'Screens/bottomBar/bottombar.dart';
 
 void main() {
   runApp(
@@ -26,13 +30,14 @@ class MyApp extends StatelessWidget {
       // theme: dark,
       theme: light,
       darkTheme: dark,
-      home: const SplashScreen(),
+      home: const BottomBarPage(),
     );
   }
 }
 
 List<SingleChildWidget> providers() {
   return [
+    ChangeNotifierProvider(create: (context) => BottomNavbarModelPage()),
     ChangeNotifierProvider(create: (context) => CategoriesProvider()),
   ];
 }
