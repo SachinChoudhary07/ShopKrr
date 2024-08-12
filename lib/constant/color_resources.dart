@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ColorResources {
-
-
-
   // shopKrr k color
   static const  Color Primary_color = const Color(0xff053262);
   static const Color colorblack = const Color.fromARGB(255, 0, 0, 0);
