@@ -24,13 +24,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
+      
       title: "ShopKrr",
       debugShowCheckedModeBanner: false,
       // theme: Provider.of<ThemeProvider>(context).darkTheme ? dark : light,
       // theme: dark,
       theme: light,
       darkTheme: dark,
-      home: const BottomBarPage(),
+      themeMode: ThemeMode.dark,
+      home: const LoginPage(),
     );
   }
 }
