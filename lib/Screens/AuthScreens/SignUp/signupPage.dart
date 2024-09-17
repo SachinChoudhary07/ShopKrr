@@ -31,22 +31,22 @@ class _SignupPageState extends State<SignupPage> {
                   height: height / 3.5,
                 ),
               ),
-              Text(
+              const Text(
                 AppConstants.signupText,
-                style: const TextStyle(fontFamily: 'Lora', fontSize: 26, fontWeight: FontWeight.bold),
+                style: TextStyle(fontFamily: 'Lora', fontSize: 26, fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: height / 26,
               ),
-              emailTextField(),
+              emailTextField(context),
               SizedBox(
                 height: height / 26,
               ),
-              passwordTextField(),
+              passwordTextField(context),
               const SizedBox(
                 height: 4,
               ),
-              Align(
+              const Align(
                 alignment: Alignment.centerRight,
                 child: Text(
                   AppConstants.forgotText,
@@ -57,7 +57,7 @@ class _SignupPageState extends State<SignupPage> {
               SizedBox(
                 height: height / 8,
               ),
-              button(AppConstants.btntxt2, ColorResources.Primary_color, ColorResources.Primary_color, ColorResources.Primary_color, () {
+              button(AppConstants.btntxt2, ColorResources.Primary_color, ColorResources.Primary_color, () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(

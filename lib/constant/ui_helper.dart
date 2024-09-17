@@ -20,7 +20,7 @@ class Helper {
         blurRadius: 16,
         offset: const Offset(0, 8),
         spreadRadius: 0,
-        color: ColorResources.gray80.withOpacity(0.05),
+        color: ColorResources.grey.withOpacity(0.05),
       );
 
   static BorderRadius borderRadius([double radius = 10.0]) =>
@@ -37,7 +37,7 @@ class Helper {
           {BoxFit boxFit = BoxFit.cover,
           double height = 40,
           double width = 40,
-          Color color = ColorResources.whiteColor}) =>
+          Color color = ColorResources.white}) =>
       Image.asset(
         imagePath,
         fit: boxFit,
