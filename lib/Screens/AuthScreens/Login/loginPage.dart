@@ -23,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
       backgroundColor: Theme.of(context).colorScheme.primary,
       body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
                     bottomLeft: Radius.circular(50),
                     bottomRight: Radius.circular(50)),
                 child: Image.asset(
-                  AppConstants.logoTransparent,
+                  AppConstants.loginImage,
                   height: height / 2.5,
                   fit: BoxFit.fitWidth,
                 ),
