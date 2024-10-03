@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopkrr/constant/ui_helper.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key, required this.image, required this.title});
@@ -11,7 +12,7 @@ class WelcomePage extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return Stack(children: [
       Image(
-        width: width,
+        width: Helper.mediaQueryWidth(context),
         image: AssetImage(image),
       ),
       Positioned(
