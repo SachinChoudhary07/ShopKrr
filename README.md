@@ -1,6 +1,6 @@
 # shopkrr
 
-A new Flutter project.
+A new Flutter E - commerce project.
 
 ## Getting Started
 
