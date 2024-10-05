@@ -3,6 +3,7 @@ import 'package:shopkrr/Screens/AuthScreens/Login/loginPage.dart';
 import 'package:shopkrr/Screens/WelcomeScreens/welcomepages.dart';
 import 'package:shopkrr/constant/app_constant.dart';
 import 'package:shopkrr/constant/color_resources.dart';
+import 'package:shopkrr/constant/ui_helper.dart';
 import 'package:shopkrr/services/navigation.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -18,6 +19,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double width = Helper.mediaQueryWidth(context, 1);
+    double height = Helper.mediaQueryHeight(context, 1);
     return Scaffold(
       body: Stack(children: [
         PageView(
@@ -44,8 +47,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         ),
         Positioned(
           bottom: 30,
-          left: 0,
-          right: 0,
+          right: 20,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(3, (index) {
@@ -55,7 +57,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 height: _currentIndex == index ? 12 : 8,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: _currentIndex == index ? Colors.blue : Colors.grey,
+                  color: _currentIndex == index
+                      ? ColorResources.secondaryColorDark
+                      : ColorResources.white,
                 ),
               );
             }),
@@ -63,33 +67,35 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         ),
         // Next / Skip Button
         Positioned(
-          bottom: 30,
-          right: 20,
-          child: _currentIndex == 2
-              ? ElevatedButton(
+          bottom: height * .18,
+          left: width * .1,
+          child:IconButton(
+                  icon: const Icon(
+                    Icons.play_arrow_outlined,
+                    color: ColorResources.grey,
+                    size: 30,
+                  ),
                   style: const ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(
-                        ColorResources.secondaryColorDark),
+                    backgroundColor:
+                        WidgetStatePropertyAll(ColorResources.white),
+                    shape: WidgetStatePropertyAll(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(8),
+                        ),
+                      ),
+                    ),
                   ),
                   onPressed: () {
-                    // Navigate to the next page (Home Page) after onboarding
-                    pushReplacement(context, const LoginPage());
+                    if (_currentIndex == 2) {
+                      pushReplacement(context, const LoginPage());
+                    } else {
+                      pageController.nextPage(
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                      );
+                    }
                   },
-                  child: const Text("Get Started",
-                      style: TextStyle(
-                          fontSize: 16, color: ColorResources.colorwhite)),
-                )
-              : TextButton(
-                  onPressed: () {
-                    pageController.nextPage(
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeInOut,
-                    );
-                  },
-                  child:  const Text(
-                    "Next",
-                    style: TextStyle(fontSize: 20, color: ColorResources.white),
-                  ),
                 ),
         ),
       ]),

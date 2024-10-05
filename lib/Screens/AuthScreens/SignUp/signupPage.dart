@@ -1,9 +1,14 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:shopkrr/Screens/bottomBar/bottombar.dart';
+import 'package:shopkrr/Screens/AuthScreens/auth_widget.dart';
+import 'package:shopkrr/Screens/AuthScreens/otp_page.dart';
+// import 'package:shopkrr/Screens/bottomBar/bottombar.dart';
 import 'package:shopkrr/constant/app_constant.dart';
-import 'package:shopkrr/constant/color_resources.dart';
+// import 'package:shopkrr/constant/color_resources.dart';
+// import 'package:shopkrr/constant/dimension.dart';
+import 'package:shopkrr/constant/ui_helper.dart';
+import 'package:shopkrr/services/navigation.dart';
 import 'package:shopkrr/widget/widget.dart';
 
 class SignupPage extends StatefulWidget {
@@ -14,58 +19,96 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
+  TextEditingController phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
+    double height = Helper.mediaQueryHeight(context, 1);
+    double width = Helper.mediaQueryWidth(context, 1);
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 100, 20, 20),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: Image.asset(
-                 AppConstants.logoTransparent,
-                  height: height / 3.5,
-                ),
+      backgroundColor: Theme.of(context).colorScheme.primary,
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        automaticallyImplyLeading: false,
+        // leadingWidth: 30,
+        // centerTitle: false,
+        title: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.chevron_left_rounded,
+              size: 40,
+            )),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Helper.heightSizedBox(
+              height * .02,
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 35),
+              child: Text(
+                AppConstants.createaccount,
+                style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold),
+                softWrap: true,
               ),
-              const Text(
-                AppConstants.signupText,
-                style: TextStyle(fontFamily: 'Lora', fontSize: 26, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(
-                height: height / 26,
-              ),
-              emailTextField(context),
-              SizedBox(
-                height: height / 26,
-              ),
-              passwordTextField(context),
-              const SizedBox(
-                height: 4,
-              ),
-              const Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  AppConstants.forgotText,
-                  textAlign: TextAlign.end,
-                  style: TextStyle(color: ColorResources.Primary_color),
-                ),
-              ),
-              SizedBox(
-                height: height / 8,
-              ),
-              button(AppConstants.btntxt2, ColorResources.Primary_color, ColorResources.Primary_color, () {
-                Navigator.push(
+            ),
+            Helper.heightSizedBox(
+              height * .05,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: nameTextField(context),
+            ),
+            Helper.heightSizedBox(
+              height * .01,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: phoneTextField(context, phoneController),
+            ),
+            Helper.heightSizedBox(
+              height * .01,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: passwordTextField(context, AppConstants.password),
+            ),
+            Helper.heightSizedBox(height * .01),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child:
+                  confirmpasswordTextField(context, AppConstants.confirmpass),
+            ),
+            Helper.heightSizedBox(height * .03),
+            button(
+              context,
+              AppConstants.signupText,
+              Theme.of(context).colorScheme.secondary,
+              Theme.of(context).colorScheme.tertiary,
+              () {
+                push(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => const BottomBarPage(),
+                    OtpPage(
+                      number: phoneController.text,
                     ));
-              }),
-            ],
-          ),
+              },
+            ),
+            Helper.heightSizedBox(
+              height * .005,
+            ),
+            googleButton(context),
+            Helper.heightSizedBox(
+              height * .005,
+            ),
+            facebookButton(context),
+            Helper.heightSizedBox(
+              height * .02,
+            ),
+          ],
         ),
       ),
     );

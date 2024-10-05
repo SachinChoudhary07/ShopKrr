@@ -1,9 +1,11 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:shopkrr/Screens/AuthScreens/SignUp/signupPage.dart';
+import 'package:shopkrr/Screens/AuthScreens/auth_widget.dart';
 import 'package:shopkrr/Screens/bottomBar/bottombar.dart';
 import 'package:shopkrr/constant/app_constant.dart';
-import 'package:shopkrr/constant/color_resources.dart';
+import 'package:shopkrr/constant/ui_helper.dart';
 import 'package:shopkrr/services/navigation.dart';
 import 'package:shopkrr/widget/widget.dart';
 
@@ -15,15 +17,16 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    double height = Helper.mediaQueryHeight(context, 1);
+    double width = Helper.mediaQueryWidth(context, 1);
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.primary,
       body: SingleChildScrollView(
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
@@ -34,28 +37,29 @@ class _LoginPageState extends State<LoginPage> {
                     bottomRight: Radius.circular(50)),
                 child: Image.asset(
                   AppConstants.loginImage,
-                  height: height / 2.5,
+                  height: height / 3,
                   fit: BoxFit.fitWidth,
                 ),
               ),
             ),
-            SizedBox(
-              height: height / 26,
+            Helper.heightSizedBox(
+              height * .02,
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: emailTextField(context),
+              child: phoneTextField(
+                context,
+                phoneController,
+              ),
             ),
-            SizedBox(
-              height: height / 35,
+            Helper.heightSizedBox(
+              height * .01,
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: passwordTextField(context),
+              child: passwordTextField(context, AppConstants.password),
             ),
-            const SizedBox(
-              height: 4,
-            ),
+            Helper.heightSizedBox(height * .01),
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Align(
@@ -68,36 +72,46 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            SizedBox(
-              height: height / 15,
+            Helper.heightSizedBox(
+              height * .04,
             ),
             button(
+              context,
               AppConstants.btntxt1,
               Theme.of(context).colorScheme.secondary,
               Theme.of(context).colorScheme.tertiary,
               () {
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //       builder: (context) => const BottomBarPage(),
-                //     ));
                 push(context, const BottomBarPage());
               },
             ),
-            SizedBox(
-              height: height * .02,
+            Helper.heightSizedBox(
+              height * .02,
             ),
             googleButton(context),
-            SizedBox(
-              height: height * .02,
+            Helper.heightSizedBox(
+              height * .01,
+            ),
+            facebookButton(context),
+            Helper.heightSizedBox(
+              height * .02,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                 Text("Don't have an account ?",style: TextStyle(color: Theme.of(context).colorScheme.onSurface),),
+                Text(
+                  "Don't have an account ?",
+                  style:
+                      TextStyle(color: Theme.of(context).colorScheme.onSurface),
+                ),
                 TextButton(
-                  onPressed: () {},
-                  child: Text("Register",style: TextStyle(color: Theme.of(context).colorScheme.secondary),),
+                  onPressed: () {
+                    push(context, const SignupPage());
+                  },
+                  child: Text(
+                    "Register",
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.secondary),
+                  ),
                 ),
               ],
             )

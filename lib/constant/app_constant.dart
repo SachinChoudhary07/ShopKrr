@@ -7,12 +7,39 @@ class AppConstants {
   static const String heading = 'Welcome to ShopKrrr';
   static const String subTitle =
       'Shop & get updates on new products and sales with our mobile app.';
-  static const String btntxt1 = 'Log In';
-  static const String btntxt2 = 'Sign up';
-  static const String signinText = "Sign In";
+
+
+      //Login Textt
+  static const String btntxt1 = 'SIGN IN';
+  static const String btntxt2 = 'SIGN UP';
+  static const String signinText = "SIGN IN";
   static const String forgotText = "Forgot Password";
   static const String signupText = "Sign Up";
   static const String profile = 'Account Setting';
+
+  static const String signupText = "SIGN UP";
+  static const String googlesignin = "SIGN IN WITH GOOGLE";
+  static const String facebooksignin = "SIGN IN WITH FACEBOOK";
+  static const String createaccount = "CREATE YOUR ACCOUNT";
+  static const String password = "Password";
+  static const String confirmpass = "Confirm Password";
+  static const String entername = "Enter Full Name";
+  static const String submit = "Submit";
+  static const String otpsentto = "We have sent the code verification to your number";
+
+// categories
+
+  static const String categories = "CATEGORIES";
+  static const String men = "MEN";
+  static const String women = "WOMEN";
+  static const String kids = "KIDS";
+  static const String bags = "BAGS";
+  static const String shoes = "SHOES";
+  static const String accessories = "ACCESSORIES";
+
+
+
+  static const String profile = 'Profile';
   static const String address = 'Address';
   static const String notifications = 'Notifications';
   static const String generalSettingText = 'General Setting';
@@ -68,6 +95,7 @@ class AppConstants {
   // Images
   String Logo = 'assets/images/ShopKrrr.png';
   static const String googleLogo = 'assets/images/google.png';
+  static const String facebooklogo = 'assets/images/facebooklogo.png';
   static const String logoTransparent = 'assets/images/ShopKrrr_back.png';
   //welcome screen images
   static const String welcome1 = 'assets/images/welcome1.png';
@@ -90,6 +118,16 @@ class AppConstants {
 
 //Login Page Image
   static const String loginImage= 'assets/images/loginpageimage.png';
+  static const String eyeicon= 'assets/images/eye.png';
+
+  //Categories images
+  static const String mencategory= 'assets/images/men.png';
+  static const String womencategory= 'assets/images/women.png';
+  static const String kidscategory= 'assets/images/kids.png';
+  static const String bagscategory= 'assets/images/bags.png';
+  static const String shoescategory= 'assets/images/shoes.png';
+  static const String accessoriescategory= 'assets/images/accessories.png';
+
   // Icons
   static const String appLogo = 'assets/icons/app_logo.png';
 }
