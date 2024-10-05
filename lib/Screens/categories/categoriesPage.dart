@@ -2,6 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shopkrr/constant/app_constant.dart';
+import 'package:shopkrr/constant/ui_helper.dart';
+import 'package:shopkrr/main.dart';
 import 'package:shopkrr/provider/categoryProvider/categoryProvider.dart';
 
 class CategoryPage extends StatefulWidget {
@@ -15,65 +18,86 @@ class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
         automaticallyImplyLeading: false,
-        title: const Text("Categories"),
+        // leadingWidth: 30,
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.chevron_left_sharp,
+            size: 40,
+          ),
+        ),
+        title: Text(
+          AppConstants.categories,
+          style: TextStyle(color: Theme.of(context).colorScheme.onSurface),
+        ),
       ),
-      body:Consumer<CategoriesProvider>(builder: (context, CategoriesProvider model, _) {
+      body: Consumer<CategoriesProvider>(
+          builder: (context, CategoriesProvider provider, _) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Helper.heightSizedBox(20),
             Expanded(
               child: ListView.builder(
-                itemCount: 8,
-                itemBuilder: (context, index) => Container(
-                  margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                  decoration: const BoxDecoration(
-                    color: Colors.green,
-                    // borderRadius: BorderRadius.circular(10),
-                  ),
-                  height: 160,
-                  width: 200,
-                  child: Stack(
-                    children: [
-                      ClipRRect(
-                        // borderRadius: BorderRadius.circular(10),
-                        child: Image.asset(
-                          "assets/images/menss.jpeg",
-                          fit: BoxFit.cover,
-                          width: double.infinity,
-                          height: double.infinity,
-                        ),
-                      ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: BackdropFilter(
-                          filter: ImageFilter.blur(sigmaX: 1.0, sigmaY: 1.0),
-                          child: Container(
-                            color: Colors.black.withOpacity(0),
-                          ),
-                        ),
-                      ),
-                      const Center(
-                        child: Text(
-                          "Mens",
-                          style: TextStyle(
-                            fontSize: 22,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+                  itemCount: provider.category.length,
+                  itemBuilder: (context, index) => categoryCard(
+                    context,
+                        provider.category[index]['title']!,
+                        provider.category[index]['imageUrl']!,
+                      )),
             )
-
           ],
-        );}
-      ),
+        );
+      }),
     );
   }
+}
+
+Widget categoryCard(BuildContext context, String title, String image) {
+  return Container(
+    margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+    height: 200,
+    // width: 340,
+    child: Center(
+      child: Stack(
+        children: [
+          Image(
+            image: AssetImage(image),
+          ),
+          Positioned(
+            left: 25,
+            bottom: 40,
+            child: Text(
+              title,
+              style:  TextStyle(
+                
+                // color: c
+                color: Colors.transparent,
+                fontSize: 40,
+                decoration: TextDecoration.underline,
+                // height: 2,
+
+                decorationThickness: 2.5,
+                decorationColor: Theme.of(context).colorScheme.tertiary,
+                letterSpacing: 0,
+                shadows:  [
+      Shadow(
+        offset: const Offset(0, -10), // Controls the vertical offset
+        color: Theme.of(context).colorScheme.tertiary,   // Background color to create a gap effect
+      ),
+    ],
+                
+              ),
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
 }

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:shopkrr/Screens/splashScreen/splashScreen.dart';
 import 'package:shopkrr/provider/categoryProvider/categoryProvider.dart';
+import 'package:shopkrr/provider/loginProvider/loginProvider.dart';
 import 'package:shopkrr/theme/dark_theme.dart';
 import 'package:shopkrr/theme/light_theme.dart';
 
@@ -41,5 +42,6 @@ List<SingleChildWidget> providers() {
   return [
     ChangeNotifierProvider(create: (context) => BottomNavbarModelPage()),
     ChangeNotifierProvider(create: (context) => CategoriesProvider()),
+        ChangeNotifierProvider(create: (context) => LoginProvider()),
   ];
 }
