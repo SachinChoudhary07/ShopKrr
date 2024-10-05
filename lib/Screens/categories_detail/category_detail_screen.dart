@@ -220,7 +220,8 @@ Stack headerWidget(BuildContext context) {
       Container(
         height: 200,
         width: double.infinity,
-        child: Helper.getImage(AppConstants.menCategoryImage),
+        color: Colors.red,
+        // child: Helper.getImage(AppConstants.menCategoryImage),
       ),
       Positioned(
         top: 18,

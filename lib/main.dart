@@ -27,14 +27,15 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
+    final provider =
+    Provider.of<AccountProvider>(context, listen: true);
+
     return MaterialApp(
       title: "ShopKrr",
       debugShowCheckedModeBanner: false,
-      // theme: Provider.of<ThemeProvider>(context).darkTheme ? dark : light,
-      // theme: dark,
       theme: light,
       darkTheme: dark,
-      themeMode: ThemeMode.light,
+      themeMode: provider.isDark ? ThemeMode.light : ThemeMode.dark,
       home: const SplashScreen(),
       // home: const CartPage(),
     );

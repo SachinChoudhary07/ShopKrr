@@ -95,10 +95,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
               // _buildPasswordField(),
               const SizedBox(height: 30),
               button(
+                context,
                  AppConstants.saveChangesText,
                 Theme.of(context).colorScheme.secondary,
                 Colors.white,
-                  () {}              )
+                  () {})
             ],
           ),
         ),
