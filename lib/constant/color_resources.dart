@@ -9,9 +9,9 @@ class ColorResources {
   //  ColorForLightMode
   static const Color primaryColorLight = Color.fromARGB(255, 255, 255, 255);
   static const Color secondaryColorLight = Color.fromARGB(255, 223, 90, 34);
-  static const Color splashBG = Color.fromARGB(255,244,118,61 );
-  static const Color splashCricle1 = Color.fromARGB(255,245,118,47 );
-  static const Color splashCricle2 = Color.fromARGB(255,247,131,54);
+  static const Color splashBG = Color.fromARGB(255,243,108,44 );
+  static const Color splashCricle1 = Color.fromARGB(255, 245,117,47);
+  static const Color splashCricle2 = Color.fromARGB(255,247,132,54);
 
 
   // ColorForDarkMode
@@ -24,10 +24,10 @@ class ColorResources {
 
   // neutral color
   static const Color black = Color(0xFF131313);
-  static const Color darkgrey = Color(0xFF2D2D2D);
-  static const Color grey = Color(0xFF404040);
-  static const Color lightgrey = Color(0xFF949494);
+  static const Color darkgrey = Color.fromARGB(255,45,45,45);
+  static const Color grey = Color.fromARGB(255, 128, 128, 128);
+  static const Color lightgrey = Color.fromARGB(255, 249,249,249);
   static const Color silver = Color(0xFFD9d9d9);
-  static const Color white = Color(0xFFe9e9eb);
+  static const Color white = Color.fromARGB(255, 255, 255, 255);
 
 }

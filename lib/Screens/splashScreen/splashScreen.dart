@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:shopkrr/Screens/WelcomeScreens/welcome.dart';
 import 'package:shopkrr/constant/color_resources.dart';
 import 'package:shopkrr/constant/dimension.dart';
+import 'package:shopkrr/constant/ui_helper.dart';
 import 'package:shopkrr/services/navigation.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -35,22 +36,22 @@ class _SplashScreenState extends State<SplashScreen> {
         children: [
           Center(
             child: Container(
-              decoration: const BoxDecoration(
+              decoration:  BoxDecoration(
                 backgroundBlendMode: BlendMode.screen,
                 
-                color: ColorResources.splashCricle1,
+                color: ColorResources.splashCricle1.withOpacity(.55),
                 shape: BoxShape.circle
               ),
               child: Padding(
-                padding: const EdgeInsets.all(Dimensions.paddingSizeLarge),
+                padding: const EdgeInsets.all(Dimensions.paddingSizeExtraOverLarge),
                 child: Container(
                   padding: const EdgeInsets.all(Dimensions.paddingSizeLarge),
                   decoration: const BoxDecoration(
                     color: ColorResources.splashCricle2,
                     shape: BoxShape.circle
                   ),
-                  child: const Center(
-                    child: Text("S",style: TextStyle(fontSize: 100 ,fontWeight:  FontWeight.w300),),
+                  child:  Center(
+                    child: Text("S",style: TextStyle(fontSize: Helper.mediaQueryWidth(context,.3) ,fontWeight:  FontWeight.w300),),
                   ),
                 ),
               ),

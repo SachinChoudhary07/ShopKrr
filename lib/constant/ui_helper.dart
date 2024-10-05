@@ -5,7 +5,7 @@ class Helper {
   //Sizes
   static SizedBox heightSizedBox([double height = 5]) =>
       SizedBox(height: height);
-  static SizedBox widthSizedBox([double width = 5]) => SizedBox(width: width);
+  static SizedBox widthSizedBox([double width = 5, Widget? widget]) => SizedBox(width: width,child: widget,);
   static double mediaQueryWidth(BuildContext context, [double value = 1.0]) =>
       MediaQuery.of(context).size.width * value;
   static double mediaQueryHeight(BuildContext context, [double value = 1.0]) =>
@@ -30,8 +30,9 @@ class Helper {
   static getImage(String imagePath,
           {BoxFit boxFit = BoxFit.cover,
           double height = 40,
-          double width = 40}) =>
-      Image.asset(imagePath, fit: boxFit, height: height, width: width);
+          double width = 40,
+          Color color = Colors.white}) =>
+      Image.asset(imagePath, fit: boxFit, height: height, width: width,color: color,);
 
   static getImageWithColor(String imagePath,
           {BoxFit boxFit = BoxFit.cover,
