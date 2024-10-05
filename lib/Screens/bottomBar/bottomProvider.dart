@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopkrr/Screens/Account/Profile.dart';
+import 'package:shopkrr/Screens/Account/account_screen.dart';
 import 'package:shopkrr/Screens/Cart/cart.dart';
 import 'package:shopkrr/Screens/Dashboard/Dashboard.dart';
 import 'package:shopkrr/Screens/Orders/orders.dart';
@@ -15,7 +15,8 @@ class BottomNavbarModelPage extends ChangeNotifier {
     const CategoryPage(),
      const OrdersPage(), 
      const CartPage(),
-      const ProfilePage()];
+      const AccountPage()
+  ];
 
   List get bottombarScreens => _bottombarScreens;
 

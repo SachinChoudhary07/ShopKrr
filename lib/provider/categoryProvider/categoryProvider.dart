@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:shopkrr/Screens/Account/Profile.dart';
+import 'package:shopkrr/Screens/Account/account_screen.dart';
 import 'package:shopkrr/Screens/Cart/cart.dart';
 import 'package:shopkrr/Screens/Dashboard/Dashboard.dart';
 import 'package:shopkrr/Screens/Orders/orders.dart';
@@ -12,7 +12,13 @@ class CategoriesProvider extends ChangeNotifier {
 
   int get bottombarzindex => _bottombarzindex;
 
-  final List _bottombarScreens = [const DashboardPage(), const CategoryPage(), const OrdersPage(), const CartPage(), const ProfilePage()];
+  final List _bottombarScreens = [
+    const DashboardPage(),
+    const CategoryPage(),
+    const OrdersPage(),
+    const CartPage(),
+    const AccountPage()
+  ];
 
   List get bottombarScreens => _bottombarScreens;
 
