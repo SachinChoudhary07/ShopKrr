@@ -15,9 +15,7 @@ class AppConstants {
   static const String signinText = "SIGN IN";
   static const String forgotText = "Forgot Password";
   static const String signupText = "Sign Up";
-  static const String profile = 'Account Setting';
 
-  static const String signupText = "SIGN UP";
   static const String googlesignin = "SIGN IN WITH GOOGLE";
   static const String facebooksignin = "SIGN IN WITH FACEBOOK";
   static const String createaccount = "CREATE YOUR ACCOUNT";

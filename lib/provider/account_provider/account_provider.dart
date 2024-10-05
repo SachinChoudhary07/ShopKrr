@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class AccountProvider with ChangeNotifier {
-  bool _isSwitched = false;
+  bool _isDark = true;
 
-  bool get isSwitched => _isSwitched;
+  bool get isDark => _isDark;
 
-  void toggleSwitch(bool value) {
-    _isSwitched = value;
+  void toggleSwitch() {
+    _isDark = !_isDark;
     notifyListeners();
   }
 }

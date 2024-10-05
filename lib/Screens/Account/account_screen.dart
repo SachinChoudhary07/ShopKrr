@@ -71,7 +71,7 @@ class _AccountPageState extends State<AccountPage> {
               height: 30.0,
               valueFontSize: 12.0,
               toggleSize: 20.0,
-              value: provider.isSwitched,
+              value: provider.isDark,
               borderRadius: 30.0,
               padding: 2.0,
               activeColor: Colors.orange,
@@ -87,7 +87,7 @@ class _AccountPageState extends State<AccountPage> {
                 size: 20,
               ),
               onToggle: (val) {
-                provider.toggleSwitch(val);
+                provider.toggleSwitch();
               },
             );
           },

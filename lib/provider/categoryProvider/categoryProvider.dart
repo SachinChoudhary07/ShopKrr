@@ -18,8 +18,7 @@ class CategoriesProvider extends ChangeNotifier {
     const CategoryPage(),
     const OrdersPage(),
     const CartPage(),
-//     const AccountPage()
-    const ProfilePage()
+    const AccountPage()
   ];
 
   final List<Map<String, String>> category = [

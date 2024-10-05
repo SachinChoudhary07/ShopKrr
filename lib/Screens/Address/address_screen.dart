@@ -35,6 +35,7 @@ class _AddressScreenState extends State<AddressScreen> {
           addressWidget(context),
           Spacer(),
           button(
+            context,
               AppConstants.ddNewAddressText,
               Theme.of(context).colorScheme.secondary,
               ColorResources.white, () {
