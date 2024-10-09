@@ -2,12 +2,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shopkrr/Screens/categories_detail/category_detail_screen.dart';
 import 'package:shopkrr/constant/app_constant.dart';
 import 'package:shopkrr/constant/ui_helper.dart';
 import 'package:shopkrr/main.dart';
 import 'package:shopkrr/provider/categoryProvider/categoryProvider.dart';
-import 'package:shopkrr/services/navigation.dart';
 
 class CategoryPage extends StatefulWidget {
   const CategoryPage({super.key});
@@ -62,48 +60,43 @@ class _CategoryPageState extends State<CategoryPage> {
 }
 
 Widget categoryCard(BuildContext context, String title, String image) {
-  return InkWell(
-    onTap: () {
-      push(context, CategoryDetailScreen());
-    },
-    child: Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      height: 200,
-      // width: 340,
-      child: Center(
-        child: Stack(
-          children: [
-            Image(
-              image: AssetImage(image),
-            ),
-            Positioned(
-              left: 25,
-              bottom: 40,
-              child: Text(
-                title,
-                style:  TextStyle(
+  return Container(
+    margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+    height: 200,
+    // width: 340,
+    child: Center(
+      child: Stack(
+        children: [
+          Image(
+            image: AssetImage(image),
+          ),
+          Positioned(
+            left: 25,
+            bottom: 40,
+            child: Text(
+              title,
+              style:  TextStyle(
+                
+                // color: c
+                color: Colors.transparent,
+                fontSize: 40,
+                decoration: TextDecoration.underline,
+                // height: 2,
 
-                  // color: c
-                  color: Colors.transparent,
-                  fontSize: 40,
-                  decoration: TextDecoration.underline,
-                  // height: 2,
-
-                  decorationThickness: 2.5,
-                  decorationColor: Theme.of(context).colorScheme.tertiary,
-                  letterSpacing: 0,
-                  shadows:  [
-        Shadow(
-          offset: const Offset(0, -10), // Controls the vertical offset
-          color: Theme.of(context).colorScheme.tertiary,   // Background color to create a gap effect
-        ),
-      ],
-
-                ),
+                decorationThickness: 2.5,
+                decorationColor: Theme.of(context).colorScheme.tertiary,
+                letterSpacing: 0,
+                shadows:  [
+      Shadow(
+        offset: const Offset(0, -10), // Controls the vertical offset
+        color: Theme.of(context).colorScheme.tertiary,   // Background color to create a gap effect
+      ),
+    ],
+                
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     ),
   );

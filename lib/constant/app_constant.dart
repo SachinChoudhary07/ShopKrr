@@ -25,6 +25,12 @@ class AppConstants {
   static const String submit = "Submit";
   static const String otpsentto = "We have sent the code verification to your number";
 
+
+
+
+  //Home Page 
+  
+
 // categories
 
   static const String categories = "CATEGORIES";
@@ -35,7 +41,15 @@ class AppConstants {
   static const String shoes = "SHOES";
   static const String accessories = "ACCESSORIES";
 
+  //orders page
+  static const String ordersuccess = "ORDER SUCCESS";
+  static const String ordersuccesstext2 = "Dolor magna eget est lorem ipsum dolor \nsit amet consectetur.";
+  static const String myOrdersText = 'My Orders';
+  static const String continueshopping = 'CONTINUE SHOPPING';
 
+//cart constants
+  static const String success = "SUCCESS";
+  static const String viewcart = "VIEW CART";
 
   static const String profile = 'Profile';
   static const String address = 'Address';
@@ -63,7 +77,6 @@ class AppConstants {
 
   // Account Page Text
   static const String accountText = 'Account';
-  static const String myOrdersText = 'My Orders';
   static const String wishlistText = 'Wishlist';
 
   // Edit Profile Text

@@ -48,15 +48,15 @@ Widget phoneTextField(BuildContext context,TextEditingController controller) {
         enabledBorder: OutlineInputBorder(
           borderRadius: const BorderRadius.all(Radius.circular(20)),
           borderSide: BorderSide(
-            color: theme.colorScheme.surface,
+            color: theme.colorScheme.onPrimary,
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: const BorderRadius.all(Radius.circular(20)),
-          borderSide: BorderSide(color: theme.colorScheme.surface),
+          borderSide: BorderSide(color: theme.colorScheme.onPrimary),
         ),
         labelText: "Phone Number",
-        labelStyle: TextStyle(color: theme.colorScheme.surface),
+        labelStyle: TextStyle(color: theme.colorScheme.onPrimary),
         prefix: const Text(
           "+91  |  ",
           style: TextStyle(fontWeight: FontWeight.bold),
@@ -83,15 +83,15 @@ Widget nameTextField(BuildContext context) {
         enabledBorder: OutlineInputBorder(
           borderRadius: const BorderRadius.all(Radius.circular(20)),
           borderSide: BorderSide(
-            color: theme.colorScheme.surface,
+            color: theme.colorScheme.onPrimary,
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: const BorderRadius.all(Radius.circular(20)),
-          borderSide: BorderSide(color: theme.colorScheme.surface),
+          borderSide: BorderSide(color: theme.colorScheme.onPrimary),
         ),
         labelText: AppConstants.entername,
-        labelStyle: TextStyle(color: theme.colorScheme.surface),
+        labelStyle: TextStyle(color: theme.colorScheme.onPrimary),
         // prefix: const Text(
         //   "+91  |  ",
         //   style: TextStyle(fontWeight: FontWeight.bold),
@@ -123,13 +123,13 @@ Widget passwordTextField(BuildContext context,String text) {
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(20)),
-              borderSide: BorderSide(color: theme.colorScheme.surface),
+              borderSide: BorderSide(color: theme.colorScheme.onPrimary),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(20)),
-              borderSide: BorderSide(color: theme.colorScheme.surface),
+              borderSide: BorderSide(color: theme.colorScheme.onPrimary),
             ),
-            labelStyle: TextStyle(color: theme.colorScheme.surface),
+            labelStyle: TextStyle(color: theme.colorScheme.onPrimary),
             suffixIcon: InkWell(
                 splashColor: Colors.transparent,
                 onTap: () {
@@ -172,13 +172,13 @@ Widget confirmpasswordTextField(BuildContext context,String text) {
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(20)),
-              borderSide: BorderSide(color: theme.colorScheme.surface),
+              borderSide: BorderSide(color: theme.colorScheme.onPrimary),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(20)),
-              borderSide: BorderSide(color: theme.colorScheme.surface),
+              borderSide: BorderSide(color: theme.colorScheme.onPrimary),
             ),
-            labelStyle: TextStyle(color: theme.colorScheme.surface),
+            labelStyle: TextStyle(color: theme.colorScheme.onPrimary),
             suffixIcon: InkWell(
                 splashColor: Colors.transparent,
                 onTap: () {
