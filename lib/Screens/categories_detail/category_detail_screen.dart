@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopkrr/Screens/categories_detail/product_widget.dart';
+import 'package:shopkrr/Screens/product_page/product_page.dart';
 import 'package:shopkrr/constant/app_constant.dart';
 import 'package:shopkrr/constant/ui_helper.dart';
 import 'package:shopkrr/provider/category_detail_provider/category_detail_provider.dart';
+import 'package:shopkrr/services/navigation.dart';
 
 class CategoryDetailScreen extends StatefulWidget {
   const CategoryDetailScreen({super.key});
@@ -202,10 +204,15 @@ Padding gridViewWidget(
         ),
         itemCount: provider.products.length,
         itemBuilder: (context, index) {
-          return ProductCard(
-            title: provider.products[index]['title']!,
-            price: provider.products[index]['price']!,
-            imageUrl: provider.products[index]['imageUrl']!,
+          return InkWell(
+            onTap: () {
+              push(context, ProductPage());
+            },
+            child: ProductCard(
+              title: provider.products[index]['title']!,
+              price: provider.products[index]['price']!,
+              imageUrl: provider.products[index]['imageUrl']!,
+            ),
           );
         },
       ),
