@@ -24,10 +24,11 @@ class ColorResources {
 
   // neutral color
   static const Color black = Color(0xFF131313);
-  static const Color darkgrey = Color.fromARGB(255,45,45,45);
-  static const Color grey = Color.fromARGB(255, 128, 128, 128);
-  static const Color lightgrey = Color.fromARGB(255, 249,249,249);
+  static const Color darkgrey = Color.fromARGB(255, 97, 93, 93);
+  static const Color grey = Color.fromARGB(255, 152, 150, 150);
+  static const Color lightgrey = Color.fromARGB(255, 232, 223, 223);
   static const Color silver = Color(0xFFD9d9d9);
   static const Color white = Color.fromARGB(255, 255, 255, 255);
+  static const Color green = Color.fromARGB(255, 75, 174, 79);
 
 }
