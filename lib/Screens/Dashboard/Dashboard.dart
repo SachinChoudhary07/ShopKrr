@@ -1,4 +1,4 @@
-// import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -30,11 +30,11 @@ class _DashboardPageState extends State<DashboardPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // CarouselSlider(
-            //   disableGesture: true,
-            //   options: CarouselOptions(disableCenter: false, enlargeCenterPage: true, autoPlay: true, aspectRatio: 1),
-            //   items: imgList.map((item) => Image.network(item.toString())).toList(),
-            // ),
+            CarouselSlider(
+              disableGesture: true,
+              options: CarouselOptions(disableCenter: false, enlargeCenterPage: true, autoPlay: true, aspectRatio: 1),
+              items: imgList.map((item) => Image.network(item.toString())).toList(),
+            ),
             SizedBox(
               child: Column(
                 children: [

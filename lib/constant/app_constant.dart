@@ -77,7 +77,30 @@ class AppConstants {
 
   // Address Page Text
   static const String addressText = 'Address';
+  static const String newAddressText = 'New Address';
   static const String ddNewAddressText = 'Add New Address';
+  static const String billingAddressText = 'BILLING ADDRESS';
+  static const String fullNameText = 'Full Name *';
+  static const String stateText = 'State *';
+  static const String cityText = 'City *';
+  static const String pincodeText = 'Pincode *';
+  static const String phoneNumText = 'Phone Number *';
+  static const String emailTextt = 'Email *';
+  static const String saveButtonText = 'Save';
+
+  // Cart Page Text
+  static const String totalText = 'Total';
+  static const String proceedToCheckoutText = 'Proceed To Checkout';
+  static const String orderNowText = 'Order Now';
+  static const String checkoutText = 'CHECKOUT';
+
+  // Product Detail Page Text
+  static const String colorText = 'Color:';
+  static const String sizeText = 'Size:';
+  static const String addToCartText = 'Add to cart';
+  static const String descriptionText = 'Description';
+  static const String relatedProductText = 'RELATED PRODUCTS';
+
 
 
   // Errors Messages
@@ -110,6 +133,8 @@ class AppConstants {
   static const String privacyIcon =  'assets/images/privacy_Icon.png';
   static const String logoutIcon =  'assets/images/logout_Icon.png';
   static const String addressIcon =  'assets/images/Address_Icon.png';
+
+
 
 
 

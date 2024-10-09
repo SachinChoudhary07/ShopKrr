@@ -3,20 +3,17 @@ import 'package:provider/provider.dart';
 import 'package:shopkrr/constant/app_constant.dart';
 import 'package:shopkrr/constant/color_resources.dart';
 import 'package:shopkrr/constant/ui_helper.dart';
-import 'package:shopkrr/provider/cart_provider/checkout_screen.dart';
-import 'package:shopkrr/services/navigation.dart';
-import 'package:shopkrr/widget/stepperWidget.dart';
+import 'package:shopkrr/provider/cart_provider/cart_provider.dart';
 import 'package:shopkrr/widget/widget.dart';
-import '../../provider/cart_provider/cart_provider.dart';
 
-class CartPage extends StatefulWidget {
-  const CartPage({super.key});
+class CheckoutScreen extends StatefulWidget {
+  const CheckoutScreen({super.key});
 
   @override
-  State<CartPage> createState() => _CartPageState();
+  State<CheckoutScreen> createState() => _CheckoutScreenState();
 }
 
-class _CartPageState extends State<CartPage> {
+class _CheckoutScreenState extends State<CheckoutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,8 +23,9 @@ class _CartPageState extends State<CartPage> {
         backgroundColor: Theme.of(context).colorScheme.primary,
         elevation: 0,
         automaticallyImplyLeading: false,
+        leading: Icon(Icons.arrow_back_ios),
         title: Text(
-          "CART",
+          AppConstants.checkoutText,
           style: TextStyle(
             color: Theme.of(context).colorScheme.onSurface,
             fontSize: 16,
@@ -39,8 +37,9 @@ class _CartPageState extends State<CartPage> {
         builder: (context, cartProvider, child) {
           return Column(
             children: [
+              selectedAddress(context),
               Container(
-                height: Helper.mediaQueryHeight(context, 0.65),
+                height: Helper.mediaQueryHeight(context, 0.6),
                 child: ListView.builder(
                   itemCount: cartProvider.cartItems.length,
                   itemBuilder: (context, index) {
@@ -59,36 +58,9 @@ class _CartPageState extends State<CartPage> {
                             style: TextStyle(
                                 color: Theme.of(context).colorScheme.secondary),
                           ),
-                          trailing: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              IconButton(
-                                icon: const Icon(
-                                  Icons.remove,
-                                  size: 18,
-                                ),
-                                onPressed: () {
-                                  if (item.quantity > 1) {
-                                    cartProvider.updateQuantity(
-                                        index, item.quantity - 1);
-                                  }
-                                },
-                              ),
-                              Text(
-                                item.quantity.toString(),
-                                style: const TextStyle(fontSize: 14),
-                              ),
-                              IconButton(
-                                icon: const Icon(
-                                  Icons.add,
-                                  size: 18,
-                                ),
-                                onPressed: () {
-                                  cartProvider.updateQuantity(
-                                      index, item.quantity + 1);
-                                },
-                              ),
-                            ],
+                          trailing: Text(
+                            item.quantity.toString(),
+                            style: const TextStyle(fontSize: 14),
                           ),
                         ),
                         Divider(
@@ -127,16 +99,57 @@ class _CartPageState extends State<CartPage> {
               const Spacer(),
               button(
                   context,
-                  AppConstants.proceedToCheckoutText,
+                  AppConstants.orderNowText,
                   Theme.of(context).colorScheme.secondary,
                   ColorResources.white,
-                  () {
-                    push(context, CheckoutScreen());
-                  })
+                      () {})
             ],
           );
         },
       ),
     );
   }
+}
+
+Container selectedAddress(context){
+  return Container(
+    margin: EdgeInsets.fromLTRB(20, 20, 20, 20),
+    decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.primary,
+        borderRadius: BorderRadius.circular(10),
+    ),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Brooklyn Warren",
+              style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15,
+                  color: Theme.of(context).colorScheme.onSurface),
+            ),
+            Text(
+              "4517 Washington Ave. Manchester, Kentucky 39495",
+              style: TextStyle(
+                  fontSize: 12, color: Theme.of(context).colorScheme.onSurface),
+            ),
+            Text(
+              "jessica.hanson@example.com",
+              style: TextStyle(
+                  fontSize: 12, color: Theme.of(context).colorScheme.onSurface),
+            ),
+            Text(
+              "(629) 555-0129",
+              style: TextStyle(
+                  fontSize: 12, color: Theme.of(context).colorScheme.onSurface),
+            ),
+          ],
+        ),
+        Icon(Icons.arrow_forward_ios_rounded, color: Theme.of(context).colorScheme.secondary,size: 16,)
+      ],
+    ),
+  );
 }

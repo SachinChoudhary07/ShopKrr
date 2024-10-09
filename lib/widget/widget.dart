@@ -200,3 +200,13 @@ Widget confirmpasswordTextField(BuildContext context,String text) {
     },
   );
 }
+
+
+Widget verticalDivider(context){
+  return Container(
+    margin: EdgeInsets.only(right: 5),
+    height: 26,
+    width: 4,
+    color: Theme.of(context).colorScheme.secondary,
+  );
+}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:shopkrr/Screens/Address/add_address_screen.dart';
 import 'package:shopkrr/constant/app_constant.dart';
 import 'package:shopkrr/constant/color_resources.dart';
@@ -15,6 +16,8 @@ class AddressScreen extends StatefulWidget {
 }
 
 class _AddressScreenState extends State<AddressScreen> {
+  bool isLoading = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,19 +33,26 @@ class _AddressScreenState extends State<AddressScreen> {
           style: TextStyle(color: Theme.of(context).colorScheme.onSurface),
         ),
       ),
-      body: Column(
-        children: [
-          addressWidget(context),
-          Spacer(),
-          button(
-            context,
-              AppConstants.ddNewAddressText,
-              Theme.of(context).colorScheme.secondary,
-              ColorResources.white, () {
-            push(context, AddNewAddressScreen());
-          }),
-          Helper.heightSizedBox(60)
-        ],
+
+      // modal_progress_hud_nsn: ^0.5.1 --> Add This to yaml file
+
+      body: ModalProgressHUD(
+        inAsyncCall: isLoading,
+        progressIndicator: const CircularProgressIndicator(),
+        child: Column(
+                children: [
+                  addressWidget(context),
+                  Spacer(),
+                  button(
+                      context,
+                      AppConstants.ddNewAddressText,
+                      Theme.of(context).colorScheme.secondary,
+                      ColorResources.white, () {
+                    push(context, AddNewAddressScreen());
+                  }),
+                  Helper.heightSizedBox(60)
+                ],
+              ),
       ),
     );
   }
@@ -82,8 +92,7 @@ Widget addressWidget(context) {
         padding: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 20),
         decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.primary,
-                border: Border.all(color: Theme.of(context).colorScheme.onSurface),
-
+            border: Border.all(color: Theme.of(context).colorScheme.onSurface),
             borderRadius: BorderRadius.circular(10),
             boxShadow: [
               BoxShadow(
