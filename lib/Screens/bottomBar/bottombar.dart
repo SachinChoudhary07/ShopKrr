@@ -14,8 +14,11 @@ class BottomBarPage extends StatefulWidget {
 class _BottomBarPageState extends State<BottomBarPage> {
   @override
   Widget build(BuildContext context) {
-    return Consumer<BottomNavbarModelPage>(builder: (context, BottomNavbarModelPage model, _) {
-      return Scaffold(body: model.bottombarScreens[model.bottombarzindex], bottomNavigationBar: Bottombarwidget(model));
+    return Consumer<BottomNavbarModelPage>(
+        builder: (context, BottomNavbarModelPage model, _) {
+      return Scaffold(
+          body: model.bottombarScreens[model.bottombarzindex],
+          bottomNavigationBar: Bottombarwidget(model));
     });
   }
 }

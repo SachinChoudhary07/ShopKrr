@@ -1,68 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:shopkrr/Screens/bottomBar/bottombar.dart';
 import 'package:shopkrr/constant/app_constant.dart';
 import 'package:shopkrr/constant/color_resources.dart';
 import 'package:shopkrr/constant/dimension.dart';
 import 'package:shopkrr/constant/ui_helper.dart';
+import 'package:shopkrr/services/navigation.dart';
 import 'package:shopkrr/widget/widget.dart';
 
-class CartPage extends StatefulWidget {
-  const CartPage({super.key});
+class OrderSuccessPage extends StatelessWidget {
+  const OrderSuccessPage({super.key});
 
-  @override
-  State<CartPage> createState() => _CartPageState();
-}
-
-class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.primary,
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        title:  Text(
-          "CART",
-          style: TextStyle(
-            color: Theme.of(context).colorScheme.onSurface,
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
       body: Column(
-        children: [
-         ListTile(
-           leading: Helper.getImage('assets/Mask group.png'),
-           title: const Text("Shirt"),
-           trailing: const Text('2'),
-         )
-        ],
-      ),
-    );
-  }
-}
-
-void _showSuccessDialog(BuildContext context) {
-  showDialog(
-    context: context,
-
-    builder: (BuildContext context) {
-      return AlertDialog(
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        shape: const RoundedRectangleBorder(
-          // borderRadius: BorderRadius.circular(20), // Rounded corners
-        ),
-        contentPadding: const EdgeInsets.all(20), // Padding around content
-        content: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
         children: [
-          Align(
-            alignment: Alignment.centerRight,
-            child: IconButton(onPressed: (){}, icon: const Icon(Icons.close)),
-          ),
           Stack(
             children: [
               Container(
@@ -72,7 +26,7 @@ void _showSuccessDialog(BuildContext context) {
                     color: Theme.of(context).colorScheme.onPrimaryContainer),
                 child: Center(
                   child: Icon(
-                    Icons.shopping_bag,
+                    Icons.local_shipping,
                     color: Theme.of(context).colorScheme.secondary,
                     // size: Helper.mediaQueryWidth(context, .25),
                     size: 100,
@@ -81,7 +35,7 @@ void _showSuccessDialog(BuildContext context) {
               ),
               Positioned(
                 top: 10,
-                right: 90,
+                right: 150,
                 child: Container(
                     decoration: const BoxDecoration(
                         //  color: ColorResources.green
@@ -96,7 +50,7 @@ void _showSuccessDialog(BuildContext context) {
           Padding(
             padding: const EdgeInsets.only(top: 30),
             child: Text(
-              AppConstants.success,
+              AppConstants.ordersuccess,
               style: TextStyle(
                   color: Theme.of(context).colorScheme.onSurface,
                   fontSize: Dimensions.fontSizeExtraOverLarge,
@@ -116,19 +70,50 @@ void _showSuccessDialog(BuildContext context) {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 30,left: 10,right: 10),
+            padding: const EdgeInsets.all(10),
             child: button(
                 context,
-                AppConstants.viewcart,
+                AppConstants.myOrdersText,
                 Theme.of(context).colorScheme.secondary,
                 Theme.of(context).colorScheme.tertiary,
                 () {}),
           ),
           // const Text("continue shopping"),
-          // continueButton(context)
+          continueButton(context)
         ],
-      )
-      );
+      ),
+    );
+  }
+}
+
+Widget continueButton(BuildContext context) {
+  return InkWell(
+    onTap: () {
+      push(context, const BottomBarPage());
     },
+    splashColor: Colors.transparent,
+    child: Align(
+      alignment: Alignment.center,
+      child: Container(
+        height: Helper.mediaQueryHeight(context, 1 * .05),
+        width: Helper.mediaQueryWidth(context, 1 * .9),
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.primary,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+              color: Theme.of(context).colorScheme.onPrimary, width: 2),
+        ),
+        margin: const EdgeInsets.all(12),
+        child: Center(
+            child: Text(
+          AppConstants.continueshopping,
+          style: TextStyle(
+              color: Theme.of(context).colorScheme.onSurface,
+              fontWeight: FontWeight.w700,
+              fontSize: 15,
+              fontFamily: "Outfit"),
+        )),
+      ),
+    ),
   );
 }

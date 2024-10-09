@@ -15,6 +15,6 @@ ThemeData dark = ThemeData(
     secondary: ColorResources.secondaryColorDark,
     tertiary: ColorResources.white,
     onPrimary: ColorResources.grey,
-    surface: ColorResources.grey,
+    surface: ColorResources.lightgrey,
   ),
 );
