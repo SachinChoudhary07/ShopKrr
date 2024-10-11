@@ -6,6 +6,7 @@ import 'package:shopkrr/provider/account_provider/account_provider.dart';
 import 'package:shopkrr/provider/cart_provider/cart_provider.dart';
 import 'package:shopkrr/provider/categoryProvider/categoryProvider.dart';
 import 'package:shopkrr/provider/category_detail_provider/category_detail_provider.dart';
+import 'package:shopkrr/provider/dashboard/dashboard_provider.dart';
 import 'package:shopkrr/provider/loginProvider/loginProvider.dart';
 import 'package:shopkrr/provider/product_provider/product_provider.dart';
 import 'package:shopkrr/provider/notification_provider/notification_provider.dart';
@@ -55,5 +56,6 @@ List<SingleChildWidget> providers() {
     ChangeNotifierProvider(create: (context) => ProductProvider()),
     ChangeNotifierProvider(create: (context) => MyOrdersProvider()),
     ChangeNotifierProvider(create: (context) => NotificationProvider()),
+    ChangeNotifierProvider(create: (context) => DashboardProvider()),
   ];
 }

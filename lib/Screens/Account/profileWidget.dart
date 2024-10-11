@@ -7,7 +7,7 @@ Widget listTileWidget(image, title, ontap, context) {
   return ListTile(
     contentPadding: EdgeInsets.zero,
     onTap: ontap,
-    leading: Helper.getImage(image,height: 22,width: 24),
+    leading: Helper.getImage(image,height: 22,width: 24,color: Theme.of(context).colorScheme.onSurface),
     trailing:  Icon(Icons.arrow_forward_ios_rounded, size: 16,color: Theme.of(context).colorScheme.onSurface,),
     title: Text(
       title,

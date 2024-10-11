@@ -1,33 +1,36 @@
 import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
 import 'package:flutter/material.dart';
 
-Widget Bottombarwidget(model) {
+Widget Bottombarwidget(model,BuildContext context) {
   return FlashyTabBar(
+    backgroundColor: Theme.of(context).colorScheme.primary,
     selectedIndex: model.bottombarzindex,
+
     showElevation: true,
     onItemSelected: (index) {
       model.updateSelectedIndex(index);
     },
     items: [
       FlashyTabBarItem(
-        icon: const Icon(Icons.other_houses_sharp),
-        title: const Text('Home'),
+        icon:  Icon(Icons.other_houses_sharp,color: Theme.of(context).colorScheme.onSurface,),
+        title:  Text('Home',style: TextStyle(color: Theme.of(context).colorScheme.secondary),),
       ),
       FlashyTabBarItem(
-        icon: const Icon(Icons.category),
-        title: const Text('Category'),
+        icon:  Icon(Icons.category,color: Theme.of(context).colorScheme.onSurface),
+        title:  Text('Category',style: TextStyle(color: Theme.of(context).colorScheme.secondary),),
       ),
       FlashyTabBarItem(
-        icon: const Icon(Icons.offline_pin_rounded),
-        title: const Text('Orders'),
+        icon:  Icon(Icons.offline_pin_rounded,color: Theme.of(context).colorScheme.onSurface),
+        title:  Text('Orders',style: TextStyle(color: Theme.of(context).colorScheme.secondary),),
       ),
       FlashyTabBarItem(
-        icon: const Icon(Icons.shopping_bag),
-        title: const Text('Cart'),
+
+        icon:  Icon(Icons.shopping_bag,color: Theme.of(context).colorScheme.onSurface),
+        title:  Text('Cart',style: TextStyle(color: Theme.of(context).colorScheme.secondary),),
       ),
       FlashyTabBarItem(
-        icon: const Icon(Icons.person_outline_sharp),
-        title: const Text('Profile'),
+        icon:  Icon(Icons.person_outline_sharp,color: Theme.of(context).colorScheme.onSurface),
+        title:  Text('Profile',style: TextStyle(color: Theme.of(context).colorScheme.secondary),),
       ),
     ],
   );

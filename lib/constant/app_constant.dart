@@ -29,7 +29,12 @@ class AppConstants {
 
 
   //Home Page 
-  
+
+  static const String allcategories = "All Categories";
+  static const String hotdeal = "HOT DEAL";
+  static const String newArrival = "New Arrivals";
+  static const String moreprod = "More Products";
+
 
 // categories
 
@@ -145,7 +150,7 @@ class AppConstants {
   static const String notificationIcon =  'assets/images/notification_Icon.png';
   static const String privacyIcon =  'assets/images/privacy_Icon.png';
   static const String logoutIcon =  'assets/images/logout_Icon.png';
-  static const String addressIcon =  'assets/images/Address_Icon.png';
+  static const String addressIcon =  'assets/images/addressicon.png';
 
 
 
