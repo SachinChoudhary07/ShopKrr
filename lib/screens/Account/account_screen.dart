@@ -8,6 +8,7 @@ import 'package:shopkrr/constant/app_constant.dart';
 import 'package:shopkrr/constant/color_resources.dart';
 import 'package:shopkrr/constant/ui_helper.dart';
 import 'package:shopkrr/provider/account_provider/account_provider.dart';
+import 'package:shopkrr/screens/Notification/notification.dart';
 import 'package:shopkrr/services/navigation.dart';
 
 class AccountPage extends StatefulWidget {
@@ -40,8 +41,12 @@ class _AccountPageState extends State<AccountPage> {
               text: AppConstants.wishlistText,
             ),
             Helper.heightSizedBox(20),
-            _buildListTile(AppConstants.accountSettingIcon, AppConstants.profile,(){}),
-            _buildListTile(AppConstants.notificationIcon, AppConstants.notifications,(){}),
+            _buildListTile(AppConstants.accountSettingIcon, AppConstants.profile,(){
+              push(context, const ProfileScreen());
+            }),
+            _buildListTile(AppConstants.notificationIcon, AppConstants.notifications,(){
+              push(context, const NotificationPage());
+            }),
             _buildListTile(AppConstants.addressIcon, AppConstants.address,(){
               push(context, const AddressScreen());
             }),
@@ -113,7 +118,7 @@ class _AccountPageState extends State<AccountPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Sachin",
+                "Shopkrrr",
                 style: TextStyle(
                   fontSize: 20,
                   fontFamily: 'Lora',
@@ -121,7 +126,7 @@ class _AccountPageState extends State<AccountPage> {
                 ),
               ),
               Text(
-                "sachin.dev@gmail.com",
+                "Shopkrrr@gmail.com",
                 style: TextStyle(
                   fontSize: 14,
                   fontFamily: 'Lora',

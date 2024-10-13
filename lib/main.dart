@@ -4,17 +4,15 @@ import 'package:provider/single_child_widget.dart';
 import 'package:shopkrr/Screens/splashScreen/splashScreen.dart';
 import 'package:shopkrr/provider/account_provider/account_provider.dart';
 import 'package:shopkrr/provider/cart_provider/cart_provider.dart';
-import 'package:shopkrr/provider/categoryProvider/categoryProvider.dart';
+import 'package:shopkrr/provider/category_provider/categoryProvider.dart';
 import 'package:shopkrr/provider/category_detail_provider/category_detail_provider.dart';
-import 'package:shopkrr/provider/dashboard/dashboard_provider.dart';
-import 'package:shopkrr/provider/loginProvider/loginProvider.dart';
+import 'package:shopkrr/provider/dashboard_provider/dashboard_provider.dart';
+import 'package:shopkrr/provider/login_provider/loginProvider.dart';
 import 'package:shopkrr/provider/product_provider/product_provider.dart';
 import 'package:shopkrr/provider/notification_provider/notification_provider.dart';
-import 'package:shopkrr/provider/orders/myorder_provider.dart';
+import 'package:shopkrr/provider/order_provider/myorder_provider.dart';
 import 'package:shopkrr/theme/dark_theme.dart';
 import 'package:shopkrr/theme/light_theme.dart';
-
-// import 'Screens/AuthScreens/Login/loginPage.dart';
 import 'Screens/bottomBar/bottomProvider.dart';
 
 void main() {
@@ -40,7 +38,6 @@ class MyApp extends StatelessWidget {
       darkTheme: dark,
       themeMode: provider.isDark ? ThemeMode.light : ThemeMode.dark,
       home: const SplashScreen(),
-      // home: const CartPage(),
     );
   }
 }
