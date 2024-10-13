@@ -18,7 +18,7 @@ class _BottomBarPageState extends State<BottomBarPage> {
         builder: (context, BottomNavbarModelPage model, _) {
       return Scaffold(
           body: model.bottombarScreens[model.bottombarzindex],
-          bottomNavigationBar: Bottombarwidget(model));
+          bottomNavigationBar: Bottombarwidget(model,context));
     });
   }
 }

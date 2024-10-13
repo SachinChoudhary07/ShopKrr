@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:shopkrr/Screens/Dashboard/dashboard_widget.dart';
+import 'package:shopkrr/constant/ui_helper.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -27,48 +28,24 @@ class _DashboardPageState extends State<DashboardPage> {
         ],
       ),
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-          carouselSlider(context),
-          categorySlider(),
-            SizedBox(
-              child: Column(
-                children: [
-                  const Text("Feature Product"),
-                  GridView.count(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10.0,
-                    mainAxisSpacing: 10.0,
-                    shrinkWrap: true,
-                    physics: const BouncingScrollPhysics(),
-                    scrollDirection: Axis.vertical,
-                    children: List.generate(
-                      6,
-                      (index) {
-                        return Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Container(
-                            decoration: const BoxDecoration(
-                              // image: DecorationImage(
-                              //   image: NetworkImage('img.png'),
-                              //   fit: BoxFit.cover,
-                              // ),
-                              color: Colors.red,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(20.0),
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  )
-                ],
-              ),
-            )
-          ],
+        child: SizedBox(
+              width: MediaQuery.of(context).size.width,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+            carouselSlider(context),
+            Helper.heightSizedBox(20),
+            categorySlider(),
+            Helper.heightSizedBox(20),
+            hotdealsWidget(),
+            Helper.heightSizedBox(20),
+            newArrivalWidget(context),
+            Helper.heightSizedBox(20),
+            onSaleWidget(context),
+
+            ],
+          ),
         ),
       ),
     );

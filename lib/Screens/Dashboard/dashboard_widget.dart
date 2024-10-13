@@ -1,9 +1,14 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shopkrr/Screens/categories_detail/product_widget.dart';
+import 'package:shopkrr/Screens/product_page/product_page.dart';
 import 'package:shopkrr/constant/app_constant.dart';
 import 'package:shopkrr/constant/ui_helper.dart';
 import 'package:shopkrr/provider/categoryProvider/categoryProvider.dart';
+import 'package:shopkrr/provider/category_detail_provider/category_detail_provider.dart';
+import 'package:shopkrr/provider/dashboard/dashboard_provider.dart';
+import 'package:shopkrr/services/navigation.dart';
 
 Widget carouselSlider(BuildContext context) {
   final List<String> imgList = [
@@ -18,7 +23,7 @@ Widget carouselSlider(BuildContext context) {
     items: imgList
         .map((item) => Image.network(
               item.toString(),
-              width: Helper.mediaQueryWidth(context, 1),
+              width: Helper.mediaQueryWidth(context),
               fit: BoxFit.fitWidth,
               // height: 200,
             ))
@@ -54,7 +59,7 @@ Widget categorySlider() {
               ),
               TextButton(
                 child: Text(
-                  'All Categories',
+                  AppConstants.allcategories,
                   style: TextStyle(
                     fontSize: 14,
                     color: Theme.of(context).colorScheme.onPrimary,
@@ -65,9 +70,10 @@ Widget categorySlider() {
             ],
           ),
         ),
-        const SizedBox(height: 16),
+        Helper.heightSizedBox(16),
         SizedBox(
-          height: 120, // Height for the list items
+          height: Helper.mediaQueryHeight(
+              context, .12), // Height for the list items
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: provider.category.length,
@@ -80,8 +86,8 @@ Widget categorySlider() {
                       borderRadius: BorderRadius.circular(40),
                       child: Image.asset(
                         provider.category[index]['imageUrl']!,
-                        height: 80,
-                        width: 80,
+                        height: Helper.mediaQueryHeight(context, .08),
+                        width: Helper.mediaQueryHeight(context, .08),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -102,4 +108,164 @@ Widget categorySlider() {
       ],
     );
   });
+}
+
+Widget hotdealsWidget() {
+  return Consumer<CategoriesDetailProvider>(
+      builder: (context, CategoriesDetailProvider provider, _) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              AppConstants.hotdeal,
+              style: TextStyle(
+                fontSize: 18,
+                color: Theme.of(context).colorScheme.onSurface,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SizedBox(
+            height: Helper.mediaQueryHeight(context, 1),
+            width: Helper.mediaQueryWidth(context),
+            child: GridView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, // Number of items per row
+                childAspectRatio: 0.7, // Aspect ratio to control item height
+                crossAxisSpacing: 10.0,
+                mainAxisSpacing: 10.0,
+              ),
+              itemCount: provider.products.length,
+              itemBuilder: (context, index) {
+                return InkWell(
+                  onTap: () {
+                    push(context, const ProductPage());
+                  },
+                  child: ProductCard(
+                    title: provider.products[index]['title']!,
+                    price: provider.products[index]['price']!,
+                    imageUrl: provider.products[index]['imageUrl']!,
+                  ),
+                );
+              },
+            ),
+          ),
+        ),
+      ],
+    );
+  });
+}
+
+Widget newArrivalWidget(context) {
+  return Consumer<CategoriesDetailProvider>(
+    builder: (context, CategoriesDetailProvider provider, _) {
+      final products = provider.products;
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "New Arrival",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                  },
+                  child: Text(
+                    "More Product",
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Theme.of(context).colorScheme.onPrimaryContainer,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 300,
+            width: Helper.mediaQueryWidth(context,1),
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: products.length,
+                itemBuilder: (context, index) {
+                  final product = products[index];
+                  return SizedBox(
+                      height: 300,
+                      width: 200,
+                      child: ProductCard(
+                        title: product['title']!,
+                        price: product['price']!,
+                        imageUrl: product['imageUrl']!,
+                      ));
+                }),
+          )
+        ],
+      );
+    },
+  );
+}
+
+Widget onSaleWidget(context) {
+  return Consumer<CategoriesDetailProvider>(
+    builder: (context, CategoriesDetailProvider provider, _) {
+      final products = provider.products;
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "ON SALE",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 300,
+            width: Helper.mediaQueryWidth(context,1),
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: products.length,
+                itemBuilder: (context, index) {
+                  final product = products[index];
+                  return SizedBox(
+                      height: 300,
+                      width: 200,
+                      child: ProductCard(
+                        title: product['title']!,
+                        price: product['price']!,
+                        imageUrl: product['imageUrl']!,
+                      ));
+                }),
+          )
+        ],
+      );
+    },
+  );
 }
