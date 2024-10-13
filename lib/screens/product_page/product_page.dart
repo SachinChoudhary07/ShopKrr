@@ -301,6 +301,7 @@ class _ProductPageState extends State<ProductPage> {
     );
   }
 }
+
 Widget relatedProducts(context) {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),

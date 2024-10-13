@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopkrr/constant/app_constant.dart';
 import 'package:shopkrr/constant/ui_helper.dart';
-import 'package:shopkrr/provider/loginProvider/loginProvider.dart';
+import 'package:shopkrr/provider/login_provider/loginProvider.dart';
 
 Widget button(context, txt, color, txtcolor, ontap) {
   return InkWell(

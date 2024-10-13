@@ -4,7 +4,7 @@ import 'package:shopkrr/Screens/Orders/myorders.dart';
 import 'package:shopkrr/constant/app_constant.dart';
 
 import 'package:provider/provider.dart';
-import 'package:shopkrr/provider/orders/myorder_provider.dart';
+import 'package:shopkrr/provider/order_provider/myorder_provider.dart';
 
 class OrdersPage extends StatefulWidget {
   const OrdersPage({super.key});
@@ -56,39 +56,42 @@ class _OrdersPageState extends State<OrdersPage> with SingleTickerProviderStateM
       body: Column(
         children: <Widget>[
           // Tab bar
-          ButtonsTabBar(
-            controller: _tabController, // Attach the TabController
-            contentPadding: const EdgeInsets.symmetric(horizontal: 30),
-            radius: 25,
-            contentCenter: true,
-            borderWidth: 1,
-            borderColor: Colors.transparent,
-            labelSpacing: 10,
-            backgroundColor: Theme.of(context).colorScheme.secondary,
-            unselectedBackgroundColor: Theme.of(context).colorScheme.primary,
-            unselectedLabelStyle:
-                TextStyle(color: Theme.of(context).colorScheme.onSurface),
-            labelStyle: TextStyle(
-              color: Theme.of(context).colorScheme.tertiary,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: ButtonsTabBar(
+              controller: _tabController, // Attach the TabController
+              contentPadding: const EdgeInsets.symmetric(horizontal: 10),
+              radius: 25,
+              contentCenter: true,
+              borderWidth: 1,
+              borderColor: Colors.transparent,
+              labelSpacing: 10,
+              backgroundColor: Theme.of(context).colorScheme.secondary,
+              unselectedBackgroundColor: Theme.of(context).colorScheme.primary,
+              unselectedLabelStyle:
+                  TextStyle(color: Theme.of(context).colorScheme.onSurface),
+              labelStyle: TextStyle(
+                color: Theme.of(context).colorScheme.tertiary,
+              ),
+              width: 160,
+              unselectedBorderColor: Theme.of(context).colorScheme.onPrimary,
+              tabs: const [
+                Tab(
+                  icon: Icon(
+                    Icons.shopping_bag_rounded,
+                    size: 22,
+                  ),
+                  text: AppConstants.myOrdersText,
+                ),
+                Tab(
+                  icon: Icon(
+                    Icons.favorite,
+                    size: 22,
+                  ),
+                  text: AppConstants.wishlistText,
+                ),
+              ],
             ),
-            width: 180,
-            unselectedBorderColor: Theme.of(context).colorScheme.onPrimary,
-            tabs: const [
-              Tab(
-                icon: Icon(
-                  Icons.shopping_bag_rounded,
-                  size: 22,
-                ),
-                text: AppConstants.myOrdersText,
-              ),
-              Tab(
-                icon: Icon(
-                  Icons.favorite,
-                  size: 22,
-                ),
-                text: AppConstants.wishlistText,
-              ),
-            ],
           ),
           // Ensure TabBarView takes the remaining space
           Expanded(
@@ -130,7 +133,7 @@ class WishlistWidget extends StatelessWidget {
             return Column(
               children: [
                 Container(
-                  margin: const EdgeInsets.symmetric(vertical: 8),
+                  margin: const EdgeInsets.symmetric(vertical: 4),
                   child: ListTile(
                     contentPadding: const EdgeInsets.symmetric(
                         horizontal: 30, vertical: 10),
@@ -189,13 +192,10 @@ class WishlistWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 10, left: 30, right: 30),
-                  child: Divider(
-                    color: Theme.of(context).colorScheme.onPrimary,
-                    thickness: 2,
-                  ),
-                ),
+                Divider(
+                  endIndent: 30,
+                  indent: 30,
+                  color: Theme.of(context).colorScheme.onPrimary,thickness: 0.8,),
               ],
             );
           },

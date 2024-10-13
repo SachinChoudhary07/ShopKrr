@@ -5,7 +5,9 @@ import 'package:provider/provider.dart';
 import 'package:shopkrr/constant/app_constant.dart';
 import 'package:shopkrr/constant/ui_helper.dart';
 import 'package:shopkrr/main.dart';
-import 'package:shopkrr/provider/categoryProvider/categoryProvider.dart';
+import 'package:shopkrr/provider/category_provider/categoryProvider.dart';
+import 'package:shopkrr/screens/categories_detail/category_detail_screen.dart';
+import 'package:shopkrr/services/navigation.dart';
 
 class CategoryPage extends StatefulWidget {
   const CategoryPage({super.key});
@@ -46,11 +48,16 @@ class _CategoryPageState extends State<CategoryPage> {
             Expanded(
               child: ListView.builder(
                   itemCount: provider.category.length,
-                  itemBuilder: (context, index) => categoryCard(
-                    context,
-                        provider.category[index]['title']!,
-                        provider.category[index]['imageUrl']!,
-                      )),
+                  itemBuilder: (context, index) => InkWell(
+                    onTap: () {
+                      push(context, CategoryDetailScreen());
+                    },
+                    child: categoryCard(
+                      context,
+                          provider.category[index]['title']!,
+                          provider.category[index]['imageUrl']!,
+                        ),
+                  )),
             )
           ],
         );
@@ -58,6 +65,8 @@ class _CategoryPageState extends State<CategoryPage> {
     );
   }
 }
+
+
 
 Widget categoryCard(BuildContext context, String title, String image) {
   return Container(

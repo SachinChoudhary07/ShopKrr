@@ -5,10 +5,12 @@ import 'package:shopkrr/Screens/categories_detail/product_widget.dart';
 import 'package:shopkrr/Screens/product_page/product_page.dart';
 import 'package:shopkrr/constant/app_constant.dart';
 import 'package:shopkrr/constant/ui_helper.dart';
-import 'package:shopkrr/provider/categoryProvider/categoryProvider.dart';
+import 'package:shopkrr/provider/category_provider/categoryProvider.dart';
 import 'package:shopkrr/provider/category_detail_provider/category_detail_provider.dart';
-import 'package:shopkrr/provider/dashboard/dashboard_provider.dart';
+import 'package:shopkrr/provider/dashboard_provider/dashboard_provider.dart';
+import 'package:shopkrr/screens/categories_detail/category_detail_screen.dart';
 import 'package:shopkrr/services/navigation.dart';
+import 'package:shopkrr/widget/widget.dart';
 
 Widget carouselSlider(BuildContext context) {
   final List<String> imgList = [
@@ -78,28 +80,33 @@ Widget categorySlider() {
             scrollDirection: Axis.horizontal,
             itemCount: provider.category.length,
             itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Column(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(40),
-                      child: Image.asset(
-                        provider.category[index]['imageUrl']!,
-                        height: Helper.mediaQueryHeight(context, .08),
-                        width: Helper.mediaQueryHeight(context, .08),
-                        fit: BoxFit.cover,
+              return InkWell(
+                onTap: () {
+                  push(context, CategoryDetailScreen());
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(40),
+                        child: Image.asset(
+                          provider.category[index]['imageUrl']!,
+                          height: Helper.mediaQueryHeight(context, .08),
+                          width: Helper.mediaQueryHeight(context, .08),
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      provider.category[index]['title']!,
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Theme.of(context).colorScheme.onSurface,
+                      const SizedBox(height: 4),
+                      Text(
+                        provider.category[index]['title']!,
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               );
             },
@@ -119,13 +126,18 @@ Widget hotdealsWidget() {
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Align(
             alignment: Alignment.centerLeft,
-            child: Text(
-              AppConstants.hotdeal,
-              style: TextStyle(
-                fontSize: 18,
-                color: Theme.of(context).colorScheme.onSurface,
-                fontWeight: FontWeight.bold,
-              ),
+            child: Row(
+              children: [
+                verticalDivider(context),
+                Text(
+                  AppConstants.hotdeal,
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Theme.of(context).colorScheme.onSurface,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
             ),
           ),
         ),
@@ -202,6 +214,7 @@ Widget newArrivalWidget(context) {
             height: 300,
             width: Helper.mediaQueryWidth(context,1),
             child: ListView.builder(
+              padding: EdgeInsets.only(left: 12),
                 scrollDirection: Axis.horizontal,
                 itemCount: products.length,
                 itemBuilder: (context, index) {
@@ -235,13 +248,18 @@ Widget onSaleWidget(context) {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  "ON SALE",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.onSurface,
-                  ),
+                Row(
+                  children: [
+                    verticalDivider(context),
+                    Text(
+                      "ON SALE",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).colorScheme.onSurface,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -250,6 +268,7 @@ Widget onSaleWidget(context) {
             height: 300,
             width: Helper.mediaQueryWidth(context,1),
             child: ListView.builder(
+                padding: EdgeInsets.only(left: 12),
                 scrollDirection: Axis.horizontal,
                 itemCount: products.length,
                 itemBuilder: (context, index) {

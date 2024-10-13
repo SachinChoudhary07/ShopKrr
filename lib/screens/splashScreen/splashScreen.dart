@@ -18,7 +18,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // Timer to navigate after 3 seconds
     Timer(const Duration(seconds: 3), () {
       pushReplacement(
         context,const WelcomeScreen()
@@ -29,7 +28,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: App,
       backgroundColor: ColorResources.splashBG,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -38,7 +36,6 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Container(
               decoration:  BoxDecoration(
                 backgroundBlendMode: BlendMode.screen,
-                
                 color: ColorResources.splashCricle1.withOpacity(.55),
                 shape: BoxShape.circle
               ),

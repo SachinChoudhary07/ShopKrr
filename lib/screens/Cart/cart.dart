@@ -6,7 +6,6 @@ import 'package:shopkrr/constant/dimension.dart';
 import 'package:shopkrr/constant/ui_helper.dart';
 import 'package:shopkrr/provider/cart_provider/checkout_screen.dart';
 import 'package:shopkrr/services/navigation.dart';
-import 'package:shopkrr/widget/stepperWidget.dart';
 import 'package:shopkrr/widget/widget.dart';
 import '../../provider/cart_provider/cart_provider.dart';
 

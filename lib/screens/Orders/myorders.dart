@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shopkrr/provider/orders/myorder_provider.dart';
+import 'package:shopkrr/provider/order_provider/myorder_provider.dart';
 
 class MyOrdersWidget extends StatelessWidget {
   const MyOrdersWidget({super.key});
@@ -16,7 +16,7 @@ class MyOrdersWidget extends StatelessWidget {
             return Column(
               children: [
                 Container(
-                  margin: const EdgeInsets.symmetric(vertical: 8),
+                  margin: const EdgeInsets.symmetric(vertical: 4),
                   child: ListTile(
                     contentPadding: const EdgeInsets.symmetric(
                         horizontal: 30, vertical: 10),
@@ -37,29 +37,12 @@ class MyOrdersWidget extends StatelessWidget {
                       style: TextStyle(
                           color: Theme.of(context).colorScheme.secondary),
                     ),
-                    // trailing: Row(
-                    //   mainAxisSize: MainAxisSize.min,
-                    //   children: [
-                    //     IconButton(
-                    //       onPressed: () {
-                    //         // Add to cart action
-                    //       },
-                    //       icon: const Icon(Icons.shopping_bag_outlined),
-                    //     ),
-                    //     IconButton(
-                    //       onPressed: () {
-                    //         // Delete item action
-                    //       },
-                    //       icon: const Icon(Icons.close),
-                    //     ),
-                    //   ],
-                    // ),
                   ),
                 ),
-                 Padding(
-                  padding: const EdgeInsets.only(left: 30,right: 30),
-                  child: Divider(color: Theme.of(context).colorScheme.onPrimary,thickness: 2,),
-                ),
+                 Divider(
+                   endIndent: 30,
+                   indent: 30,
+                   color: Theme.of(context).colorScheme.onPrimary,thickness: 0.8,),
               ],
             );
           },
