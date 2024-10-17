@@ -230,6 +230,7 @@ Stack headerWidget(BuildContext context) {
         // color: Colors.red,
         child: Helper.getImage(AppConstants.womencategory,height: 22,width: 24,color: Theme.of(context).colorScheme.onSurface),
       ),
+
       Positioned(
         top: 18,
         left: 16,
@@ -245,6 +246,7 @@ Stack headerWidget(BuildContext context) {
           ),
         ),
       ),
+
       const Positioned(
         bottom: 0,
         left: 16,
